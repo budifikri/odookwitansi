@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+ 
+ <!--FORM JOURNAL ENTRIES-->
+    <record id="view_account_payment_kwitansi_inherit" model="ir.ui.view">
+        <field name="name">account.payment.kwitansi.form</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <field name="communication" position="after">
+                <field name="ket" />
+            </field>
+        </field>
+
+    </record>
+
+    	</data>
+</odoo>

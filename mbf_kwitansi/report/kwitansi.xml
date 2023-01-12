@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+	
+	<report id="kwitansi_id"
+				string="Kwitansi"
+				model="account.payment"
+				report_type="qweb-pdf"
+				file="mbf_kwitansi.kwitansi_doc"
+				name="mbf_kwitansi.kwitansi"/>	
+							
+	</data>
+</odoo>

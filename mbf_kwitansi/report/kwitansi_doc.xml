@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<data>
+
+		<template id="kwitansi_doc">
+			<t t-call="web.external_layout">
+                <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <div>
+                            <h3 class="text-center mb32">
+                                <strong>Kwitansi</strong>
+                            </h3>
+                    </div>
+                    <div class='row'>
+                            <div class='col-3'>
+                              Sudah terima dari<br/>
+                              Jumlah nilai<br/>
+                              
+                            </div>
+                           
+                            <div class='col-9'>
+                            : <span t-esc='o.partner_id.name'/>
+                              <table width='100%' ><tr class='text text-center' style='background-color:#efefef;border: 1px solid ;' >
+                              <th  >
+                              <span    t-esc='o.terbilang'/><br/>
+                              </th></tr>
+                              </table>
+                            </div>
+                    </div>
+                        
+                    <div class='row'>
+                            <div class='col-3'>
+                              Untuk Pembayaran
+                            </div>  
+                            <div class='col-9'>
+                              <div t-foreach="o.reconciled_invoice_ids" t-as="inv">
+                                
+                                : <span t-field="inv.number"/>
+                                </div>
+                            
+                          
+                            </div>  
+                    </div>  
+                      <div class='row'>
+                            <div class='col-3'>
+                              Keterangan
+                            </div>  
+                            <div class='col-9'>
+                                : <span t-field="o.ket"/>
+                          
+                            </div>  
+                    </div>  
+  
+                             <br/>
+                    <div class='row'>
+                            <div class='col-4'>
+                              <table width='100%' >
+                              <tr class='text text-center' style='background-color:#efefef;border-top: 1px solid ;border-bottom: 1px solid ;' >
+                              <th>  
+                              <span style='font-size:26px;padding-top:10px;padding-bottom:10px;' t-esc='o.amount' 
+                              t-options='{"widget": "monetary", "display_currency": o.currency_id}'  />
+                              </th>
+                            </tr> </table>
+                            </div>
+                          <div class='col-4'>
+                            </div>
+                            <div class='col-4 text text-center'>
+                            Surabaya,
+                               <br/><br/>
+                           <div>Rio G</div>
+                           <div>SPV Finance dan Accounting </div>
+                        
+                            </div>
+                        
+                    </div> 
+                        
+                        
+                        
+                        
+                        
+                    <br/>
+
+
+              
+                
+               
+                </div>
+            </t>
+	
+
+		</template>
+
+		<template id="kwitansi">
+			<t t-call="web.html_container">
+				<t t-foreach="docs" t-as="o">
+					<t t-call="mbf_kwitansi.kwitansi_doc"  t-lang="o.partner_id.lang"/>
+				</t>
+			</t>
+		</template>
+
+	</data>
+</odoo>
