@@ -15,7 +15,7 @@
     'price': 000,
     'currency': 'USD',
     'author': 'fikrisoftware',
-    'website': 'https://www.fik-soft.com',
+    'website': 'https://odoo.fik-soft.com',
     'depends': ['base','account'],
     'data': [
             'views/keterangan.xml',
@@ -23,11 +23,8 @@
             'report/kwitansi_doc.xml',
     ],
     'installable': True,
+    'application':True, 
     'auto_install': False,
-    'live_test_url':'https://youtu.be/qehLT4WOWPs',
-    "images":["static/description/Banner.png"],
+    "images":["static/description/hasil.png"],
 }
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-#     'report/kwitansi.xml',
-#            'report/kwitansi_doc.xml',
